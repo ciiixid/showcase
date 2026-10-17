@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIIIX Showcase - Neemo CLI</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Plus+Jakarta+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Hubungkan ke CSS monokrom kamu -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar dengan Logo Perusahaan -->
+    <nav class="comic-nav">
+        <div class="nav-container">
+            <div class="nav-brand-wrapper">
+                <img src="src/img/logo.png" alt="CIIIX Logo" class="nav-logo-img" onerror="this.style.display='none';">
+                <div class="nav-brand">
+                    <span class="brand-logo">CIIIX</span>
+                    <span class="brand-slogan">"Stop overthinking, launch your idea now"</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#installation">Install</a>
+                <a href="#commands">CLI Ref</a>
+                <a href="https://www.npmjs.com/package/@ciiixid/neemo" target="_blank" class="nav-npm">npm ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section dengan Logo Lingkaran di Atas Judul -->
+    <header class="hero-section">
+        <div class="project-logo-container">
+            <img src="src/img/neemo-logo.jpg" alt="Neemo Logo" class="hero-project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        </div>
+
+        <div class="comic-badge mt-1">LATEST RELEASE</div>
+        <h1 class="hero-title">NEEMO <span style="background: #fff; color: #000; padding: 0 10px;">CLI</span></h1>
+        <p class="hero-subtitle">Professional Telegram CS Bridge Bot & Management CLI with bidirectional quoting and live auto-reloading daemon processes.</p>
+        <div class="hero-actions mt-2">
+            <a href="#installation" class="comic-btn">GET STARTED</a>
+            <a href="https://github.com/ciiixid/neemo" target="_blank" class="comic-btn" style="background: #000; color: #fff; border-color: #fff;">GITHUB REPO</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Screenshot Section -->
+        <section class="screenshot-section mb-2">
+            <div class="section-header">
+                <h2>PROJECT PREVIEW</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="comic-card mt-2">
+                <div class="card-image-box" style="height: 350px; background: #0a0a0a; cursor: pointer;">
+                    <!-- Tag Gambar Utama yang diklik -->
+                    <img src="src/img/neemo-preview.png" alt="Neemo CLI Preview" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('fallback-text').style.display='block';">
+                    
+                    <!-- Fallback Text jika gambar belum ada -->
+                    <div id="fallback-text" style="display:none; text-align: center; color: #666; position: absolute;">
+                        <span style="font-family: var(--font-heading); font-size: 2rem;">[ PLACEHOLDER SCREENSHOT ]</span>
+                        <p style="font-size: 0.9rem;">Taruh file gambar screenshot di folder <code>src/img/neemo-preview.png</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section (Diubah menjadi list panel memanjang yang rapi) -->
+        <section id="features" class="mb-2">
+            <div class="section-header">
+                <h2>✨ CORE FEATURES</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="feature-list mt-2">
+                <div class="feature-row">
+                    <div class="feature-num">01</div>
+                    <div class="feature-info">
+                        <h3>Bidirectional Quoting</h3>
+                        <p>Maps user-to-admin and admin-to-user replies accurately, including multi-media support (photos, documents, stickers).</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">02</div>
+                    <div class="feature-info">
+                        <h3>PM2 Background Daemon</h3>
+                        <p>Run your bot continuously in the background using PM2 so your terminal remains free for other tasks.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">03</div>
+                    <div class="feature-info">
+                        <h3>Live Auto-Reloading</h3>
+                        <p>Automatically detects source code changes (<code>src/</code>) and hot-reloads the bot process without missing a beat.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">04</div>
+                    <div class="feature-info">
+                        <h3>Interactive Setup</h3>
+                        <p>Guides new users through setting up their Bot Token and Admin IDs into a clean configuration file automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section dengan Tombol Copy -->
+        <section id="installation" class="mb-2">
+            <div class="section-header">
+                <h2>🚀 INSTALLATION</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="comic-alert mt-2">
+                <p>Install Neemo globally straight from the npm registry using your terminal:</p>
+                
+                <!-- Kotak Kode dengan Tombol Copy -->
+                <div class="code-box-wrapper">
+                    <pre><code class="code-text">npm install -g @ciiixid/neemo</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLI Command Reference (Dengan Tombol Copy di Setiap Contoh Perintah) -->
+        <section id="commands" class="mb-2">
+            <div class="section-header">
+                <h2>🕹️ CLI COMMAND REFERENCE</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comic-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>neemo start</code></td>
+                            <td>Starts the bot in the background via PM2 with live auto-reload.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo start</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo start', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo stop</code></td>
+                            <td>Stops and terminates the background Neemo bot process.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo stop</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo stop', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo status</code></td>
+                            <td>Checks the live running status and process information.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo status</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo status', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo add</code></td>
+                            <td>Adds a new Telegram ID to the admin/CS authorization list.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo add -u 123456789</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo add -u 123456789', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo remove</code></td>
+                            <td>Removes a Telegram ID from the admin/CS list.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo remove -u 123456789</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo remove -u 123456789', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo admins</code></td>
+                            <td>Displays a list of all currently registered admin Telegram IDs.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo admins</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo admins', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo token</code></td>
+                            <td>Displays the currently configured Telegram Bot Token.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo token</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo token', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>neemo clean</code></td>
+                            <td>Cleans up old message mapping database records older than X days.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>neemo clean -d 3</code>
+                                    <button class="copy-btn-sm" onclick="copyText('neemo clean -d 3', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 CIIIX - Neemo CLI. Open Source under MIT License.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">Stop overthinking, launch your idea now.</p>
+    </footer>
+
+    <!-- Hubungkan ke JS -->
+    <script src="src/js/main.js"></script>
+</body>
+    <div id="imageModal" class="comic-modal" onclick="closeModal()">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeModal()">[X] CLOSE</button>
+            <img id="modalImg" src="" alt="Full Preview">
+        </div>
+    </div>
+
+    <!-- Hubungkan ke JS -->
+    <script src="src/js/main.js"></script>
+</body>
+</html>
+</html>

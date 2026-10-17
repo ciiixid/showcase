@@ -1,0 +1,654 @@
+/* =================================================================
+   1. CSS VARIABLES & DESIGN SYSTEM (Monochrome Comic Theme)
+   ================================================================ */
+:root {
+    --bg-color: #000000;
+    --card-bg: #121212;
+    --card-hover: #1f1f1f;
+    --text-color: #ffffff;
+    --text-muted: #888888;
+    
+    /* Monochrome Palette */
+    --mono-white: #ffffff;
+    --mono-black: #000000;
+    --mono-gray-dark: #222222;
+    --mono-gray-light: #dddddd;
+    
+    /* Comic Structural Elements (Borders & Shadows) */
+    --border-width: 3px;
+    --border-color: #ffffff;
+    --shadow-offset: 6px;
+    --shadow-color: #ffffff;
+    
+    /* Fonts */
+    --font-heading: 'Bangers', cursive, sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* =================================================================
+   RESET & GLOBAL STYLES
+   ================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Efek halftone titik-titik klasik hitam putih */
+    background-image: radial-gradient(#222 15%, transparent 16%);
+    background-size: 24px 24px;
+}
+
+/* =================================================================
+   TYPOGRAPHY & UTILITIES
+   ================================================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mb-2 { margin-bottom: 20px; }
+
+/* =================================================================
+   HERO SECTION & HEADER
+   ================================================================ */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    background: var(--mono-black);
+    position: relative;
+}
+
+.comic-badge {
+    display: inline-block;
+    background-color: var(--mono-white);
+    color: var(--mono-black);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    padding: 4px 12px;
+    border: 2px solid var(--mono-white);
+    transform: rotate(-3deg);
+    margin-bottom: 15px;
+    box-shadow: 4px 4px 0px var(--mono-gray-dark);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 0px var(--mono-gray-dark);
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =================================================================
+   NAVBAR CIIIX STYLES
+   ================================================================ */
+.comic-nav {
+    background-color: var(--mono-black);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--mono-white);
+}
+
+.brand-slogan {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--text-muted);
+}
+
+.nav-npm {
+    background: var(--mono-white);
+    color: var(--mono-black) !important;
+    padding: 4px 10px;
+    border: 2px solid var(--mono-white);
+    box-shadow: 2px 2px 0px #444;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* =================================================================
+   5. MAIN CONTAINER & SECTION HEADER
+   ================================================================ */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--mono-white);
+    display: inline-block;
+    background: var(--mono-black);
+    padding: 0 10px 0 0;
+}
+
+.comic-line {
+    height: 4px;
+    background-color: var(--border-color);
+    width: 100%;
+    margin-top: 5px;
+    box-shadow: 3px 3px 0px var(--mono-gray-dark);
+}
+
+/* =================================================================
+   6. PROJECT CARD GRID
+   ================================================================ */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.comic-card {
+    background-color: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--border-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.comic-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: calc(var(--shadow-offset) + 3px) calc(var(--shadow-offset) + 3px) 0px var(--mono-white);
+    background-color: var(--card-hover);
+}
+
+.card-image-box {
+    height: 160px;
+    background-color: #1a1a1a;
+    border-bottom: var(--border-width) solid var(--border-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--mono-white);
+    color: var(--mono-black);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    padding: 2px 8px;
+    border: 2px solid var(--mono-black);
+}
+
+.placeholder-img {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #444;
+    letter-spacing: 2px;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* =================================================================
+   7. BUTTONS (Comic Style)
+   ================================================================ */
+.comic-btn {
+    display: inline-block;
+    background-color: var(--mono-white);
+    color: var(--mono-black);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid var(--mono-white);
+    box-shadow: 4px 4px 0px var(--mono-white);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.comic-btn:hover {
+    background-color: var(--mono-black);
+    color: var(--mono-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--mono-white);
+}
+
+.comic-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--mono-white);
+}
+
+.comic-btn.disabled {
+    background-color: #222;
+    color: #666;
+    border-color: #444;
+    cursor: not-allowed;
+    box-shadow: 4px 4px 0px #111;
+}
+
+/* =================================================================
+   8. EXTRA COMPONENTS (Persiapan untuk halaman project berikutnya)
+   ================================================================ */
+
+/* Form / Input Controls */
+.comic-form-group {
+    margin-bottom: 20px;
+}
+
+.comic-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.comic-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    border: 2px solid var(--mono-white);
+    color: var(--mono-white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-shadow: 3px 3px 0px var(--mono-white);
+}
+
+.comic-input:focus {
+    outline: none;
+    background-color: #000;
+    box-shadow: 5px 5px 0px var(--mono-white);
+}
+
+/* Alert Boxes / Callout */
+.comic-alert {
+    padding: 15px;
+    border: 2px solid var(--mono-white);
+    background-color: #111;
+    font-family: var(--font-body);
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 0px var(--mono-white);
+}
+
+/* Tables (Cocok buat log viewer / data table) */
+.comic-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid var(--mono-white);
+    margin-top: 20px;
+}
+
+.comic-table th, .comic-table td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+.comic-table th {
+    background-color: var(--mono-white);
+    color: var(--mono-black);
+    font-family: var(--font-heading);
+}
+
+/* =================================================================
+   9. FOOTER
+   ================================================================ */
+.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: var(--border-width) solid var(--border-color);
+    margin-top: 60px;
+    background-color: var(--mono-black);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =================================================================
+   10. RESPONSIVE MEDIA QUERIES
+   ================================================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .container {
+        padding: 20px 15px;
+    }
+}
+
+/* =================================================================
+   FIXES: SIMETRIS & NAVBAR LOGO
+   ================================================================ */
+
+/* Membuat card fitur memiliki tinggi yang sama dan rapi */
+.feature-card {
+    height: 100%;
+}
+
+.project-grid {
+    align-items: stretch; /* Memastikan setiap kolom dalam grid sejajar tingginya */
+}
+
+/* Navbar Brand & Logo Styling */
+.nav-brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    padding: 2px;
+}
+
+/* =================================================================
+   FEATURE LIST STYLE (Ganti dari card grid)
+   ================================================================ */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature-row {
+    background-color: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 25px;
+    transition: transform 0.15s ease;
+}
+
+.feature-row:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--mono-white);
+}
+
+.feature-num {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--mono-black);
+    background-color: var(--mono-white);
+    padding: 5px 15px;
+    border: 2px solid var(--mono-white);
+    box-shadow: 3px 3px 0px #444;
+}
+
+.feature-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--mono-white);
+}
+
+.feature-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .feature-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* =================================================================
+   CODE BOX & COPY BUTTON STYLES
+   ================================================================ */
+.code-box-wrapper {
+    position: relative;
+    background: #000;
+    border: 2px solid #444;
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+.code-box-wrapper pre {
+    overflow-x: auto;
+}
+
+.code-text {
+    font-family: monospace;
+    color: #00f0ff;
+    font-size: 1rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #222;
+    color: #fff;
+    border: 2px solid #fff;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #fff;
+    transition: all 0.1s ease;
+}
+
+.copy-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #fff;
+}
+
+.table-code-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border: 1px solid #444;
+    padding: 6px 10px;
+    gap: 10px;
+}
+
+.table-code-wrapper code {
+    color: #00f0ff;
+    font-size: 0.9rem;
+}
+
+.copy-btn-sm {
+    background: #111;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #444;
+    transition: all 0.1s ease;
+}
+
+.copy-btn-sm:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* =================================================================
+   PROJECT LOGO
+   ================================================================ */
+.project-logo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    border: 3px solid var(--mono-white);
+    background-color: var(--mono-black);
+    box-shadow: 3px 3px 0px var(--mono-white);
+    overflow: hidden; /* Ini kunci utamanya untuk memotong gambar di luar batas lingkaran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-project-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi area lingkaran dan terpotong secara pas */
+    border-radius: 50%; /* Memotong langsung file gambarnya menjadi bentuk lingkaran */
+}
+
+.hero-logo-fallback {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--mono-white);
+    letter-spacing: 1px;
+}
+
+/* =================================================================
+   IMAGE PREVIEW MODAL STYLES (Comic Theme)
+   ================================================================ */
+.comic-modal {
+    display: none; /* Default tersembunyi */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Background gelap transparan */
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    background-color: var(--mono-black);
+    border: 4px solid var(--mono-white);
+    box-shadow: 8px 8px 0px var(--mono-white);
+    max-width: 90%;
+    max-height: 90vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modal-content-wrapper img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border: 2px solid #444;
+}
+
+.modal-close-btn {
+    background: var(--mono-white);
+    color: var(--mono-black);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    padding: 5px 12px;
+    border: 2px solid var(--mono-black);
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 0px #444;
+    transition: all 0.1s ease;
+}
+
+.modal-close-btn:hover {
+    background: var(--mono-black);
+    color: var(--mono-white);
+    border-color: var(--mono-white);
+    box-shadow: 3px 3px 0px var(--mono-white);
+}
