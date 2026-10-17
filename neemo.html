@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================================================= -->
+    <!-- SEO & OPEN GRAPH (OG) META TAGS                    -->
+    <!-- ================================================= -->
+    <meta name="description" content="Professional Telegram CS Bridge Bot & Management CLI with bidirectional quoting and live auto-reloading daemon processes." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ciiix.github.io/showcase/neemo.html" />
+    <meta property="og:title" content="CIIIX Showcase - Neemo CLI" />
+    <meta property="og:description" content="Professional Telegram CS Bridge Bot & Management CLI with bidirectional quoting and live auto-reloading daemon processes." />
+    <meta property="og:image" content="https://ciiix.github.io/showcase/src/img/neemo-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ciiix.github.io/showcase/neemo.html" />
+    <meta name="twitter:title" content="CIIIX Showcase - Neemo CLI" />
+    <meta name="twitter:description" content="Professional Telegram CS Bridge Bot & Management CLI with bidirectional quoting and live auto-reloading daemon processes." />
+    <meta name="twitter:image" content="https://ciiix.github.io/showcase/src/img/neemo-logo.png" />
     <title>CIIIX Showcase - Neemo CLI</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Plus+Jakarta+Sans:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Hubungkan ke CSS monokrom kamu -->
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
 
-    <!-- Navigation Bar dengan Logo Perusahaan -->
     <nav class="comic-nav">
         <div class="nav-container">
             <div class="nav-brand-wrapper">
@@ -30,7 +45,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section dengan Logo Lingkaran di Atas Judul -->
     <header class="hero-section">
         <div class="project-logo-container">
             <img src="src/img/neemo-logo.jpg" alt="Neemo Logo" class="hero-project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -48,7 +62,6 @@
     <!-- Main Container -->
     <main class="container">
 
-        <!-- Screenshot Section -->
         <section class="screenshot-section mb-2">
             <div class="section-header">
                 <h2>PROJECT PREVIEW</h2>
@@ -56,10 +69,8 @@
             </div>
             <div class="comic-card mt-2">
                 <div class="card-image-box" style="height: 350px; background: #0a0a0a; cursor: pointer;">
-                    <!-- Tag Gambar Utama yang diklik -->
                     <img src="src/img/neemo-preview.png" alt="Neemo CLI Preview" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('fallback-text').style.display='block';">
                     
-                    <!-- Fallback Text jika gambar belum ada -->
                     <div id="fallback-text" style="display:none; text-align: center; color: #666; position: absolute;">
                         <span style="font-family: var(--font-heading); font-size: 2rem;">[ PLACEHOLDER SCREENSHOT ]</span>
                         <p style="font-size: 0.9rem;">Taruh file gambar screenshot di folder <code>src/img/neemo-preview.png</code></p>
@@ -68,7 +79,6 @@
             </div>
         </section>
 
-        <!-- Features Section (Diubah menjadi list panel memanjang yang rapi) -->
         <section id="features" class="mb-2">
             <div class="section-header">
                 <h2>✨ CORE FEATURES</h2>
@@ -106,7 +116,6 @@
             </div>
         </section>
 
-        <!-- Installation Section dengan Tombol Copy -->
         <section id="installation" class="mb-2">
             <div class="section-header">
                 <h2>🚀 INSTALLATION</h2>
@@ -115,7 +124,6 @@
             <div class="comic-alert mt-2">
                 <p>Install Neemo globally straight from the npm registry using your terminal:</p>
                 
-                <!-- Kotak Kode dengan Tombol Copy -->
                 <div class="code-box-wrapper">
                     <pre><code class="code-text">npm install -g @ciiixid/neemo</code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">COPY</button>
@@ -123,7 +131,6 @@
             </div>
         </section>
 
-        <!-- CLI Command Reference (Dengan Tombol Copy di Setiap Contoh Perintah) -->
         <section id="commands" class="mb-2">
             <div class="section-header">
                 <h2>🕹️ CLI COMMAND REFERENCE</h2>
@@ -232,9 +239,6 @@
         <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">Stop overthinking, launch your idea now.</p>
     </footer>
 
-    <!-- Hubungkan ke JS -->
-    <script src="src/js/main.js"></script>
-</body>
     <div id="imageModal" class="comic-modal" onclick="closeModal()">
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <button class="modal-close-btn" onclick="closeModal()">[X] CLOSE</button>
@@ -242,7 +246,6 @@
         </div>
     </div>
 
-    <!-- Hubungkan ke JS -->
     <script src="src/js/main.js"></script>
 </body>
 </html>
