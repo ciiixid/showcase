@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================================================= -->
+    <!-- SEO & OPEN GRAPH (OG) META TAGS                    -->
+    <!-- ================================================= -->
+    <meta name="description" content="Firefine is a self-hosted, anonymous Telegram-based live chat system built with Node.js, Express, and SQLite." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ciiix.github.io/showcase/firefine.html" />
+    <meta property="og:title" content="CIIIX Showcase - Firefine" />
+    <meta property="og:description" content="Firefine is a self-hosted, anonymous Telegram-based live chat system built with Node.js, Express, and SQLite." />
+    <meta property="og:image" content="https://ciiix.github.io/showcase/src/img/firefine-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ciiix.github.io/showcase/firefine.html" />
+    <meta name="twitter:title" content="CIIIX Showcase - Firefine" />
+    <meta name="twitter:description" content="Firefine is a self-hosted, anonymous Telegram-based live chat system built with Node.js, Express, and SQLite." />
+    <meta name="twitter:image" content="https://ciiix.github.io/showcase/src/img/firefine-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>CIIIX Showcase - Firefine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Plus+Jakarta+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <nav class="comic-nav">
+        <div class="nav-container">
+            <div class="nav-brand-wrapper">
+                <img src="src/img/logo.png" alt="CIIIX Logo" class="nav-logo-img" onerror="this.style.display='none';">
+                <div class="nav-brand">
+                    <span class="brand-logo">CIIIX</span>
+                    <span class="brand-slogan">"Stop overthinking, launch your idea now"</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#installation">Install</a>
+                <a href="#commands">Setup Ref</a>
+                <a href="https://github.com/ciiixid/firefine" target="_blank" class="nav-npm">GitHub ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="project-logo-container">
+            <img src="src/img/firefine-logo.jpg" alt="Firefine Logo" class="hero-project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        </div>
+
+        <div class="comic-badge mt-1">OPEN SOURCE LIVE CHAT</div>
+        <h1 class="hero-title">FIREFINE</h1>
+        <p class="hero-subtitle">A self-hosted, anonymous Telegram-based live chat system built with Node.js, Express, and SQLite.</p>
+        <div class="hero-actions mt-2">
+            <a href="#installation" class="comic-btn">GET STARTED</a>
+            <a href="https://github.com/ciiixid/firefine" target="_blank" class="comic-btn" style="background: #000; color: #fff; border-color: #fff;">GITHUB REPO</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <section class="screenshot-section mb-2">
+            <div class="section-header">
+                <h2>PROJECT PREVIEW</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="comic-card mt-2">
+                <div class="card-image-box" style="height: 350px; background: #0a0a0a; cursor: pointer;">
+                    <img src="src/img/firefine-preview.png" alt="Firefine Preview" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('fallback-text').style.display='block';">
+                    
+                    <div id="fallback-text" style="display:none; text-align: center; color: #666; position: absolute;">
+                        <span style="font-family: var(--font-heading); font-size: 2rem;">[ PLACEHOLDER SCREENSHOT ]</span>
+                        <p style="font-size: 0.9rem;">Taruh file gambar screenshot di folder <code>src/img/firefine-preview.png</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-2">
+            <div class="section-header">
+                <h2>✨ CORE FEATURES</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="feature-list mt-2">
+                <div class="feature-row">
+                    <div class="feature-num">01</div>
+                    <div class="feature-info">
+                        <h3>Self-Hosted & Lightweight</h3>
+                        <p>Powered by Express.js and an embedded SQLite database (<code>storage/database.sqlite</code>) for seamless portability.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">02</div>
+                    <div class="feature-info">
+                        <h3>Telegram Bot Integration</h3>
+                        <p>Seamlessly maps visitor chat sessions and routes admin replies using native Telegram message replies.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">03</div>
+                    <div class="feature-info">
+                        <h3>Domain Whitelisting Security</h3>
+                        <p>Protects your widget from unauthorized embedding on third-party websites by validating request origins.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-num">04</div>
+                    <div class="feature-info">
+                        <h3>Apple-Inspired UI & Logs</h3>
+                        <p>Clean, minimalist design with a Laravel-like centralized error middleware logging system exceptions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="mb-2">
+            <div class="section-header">
+                <h2>🚀 INSTALLATION</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div class="comic-alert mt-2">
+                <p>Clone and setup Firefine locally straight from your terminal:</p>
+                
+                <div class="code-box-wrapper">
+                    <pre><code class="code-text">git clone https://github.com/ciiixid/firefine.git && cd firefine && npm install</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="commands" class="mb-2">
+            <div class="section-header">
+                <h2>🕹️ SETUP & RUN REFERENCE</h2>
+                <div class="comic-line"></div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comic-table">
+                    <thead>
+                        <tr>
+                            <th>Action / Step</th>
+                            <th>Description</th>
+                            <th>Command</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Clone Repo</code></td>
+                            <td>Clones the Firefine repository to your local machine.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>git clone https://github.com/ciiixid/firefine.git</code>
+                                    <button class="copy-btn-sm" onclick="copyText('git clone https://github.com/ciiixid/firefine.git', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>Install Packages</code></td>
+                            <td>Installs all required project dependencies.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>npm install</code>
+                                    <button class="copy-btn-sm" onclick="copyText('npm install', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>Development Mode</code></td>
+                            <td>Starts the application server for local testing.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>npm run start</code>
+                                    <button class="copy-btn-sm" onclick="copyText('npm run start', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>Production (PM2)</code></td>
+                            <td>Runs the application continuously in the background using PM2.</td>
+                            <td>
+                                <div class="table-code-wrapper">
+                                    <code>pm2 start src/app.js --name "firefine"</code>
+                                    <button class="copy-btn-sm" onclick="copyText('pm2 start src/app.js --name "firefine"', this)">COPY</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 CIIIX - Firefine. Open Source under MIT License.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">Stop overthinking, launch your idea now.</p>
+    </footer>
+
+    <div id="imageModal" class="comic-modal" onclick="closeModal()">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeModal()">[X] CLOSE</button>
+            <img id="modalImg" src="" alt="Full Preview">
+        </div>
+    </div>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
